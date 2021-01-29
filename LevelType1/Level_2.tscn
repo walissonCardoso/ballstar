@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Collectable/Flower/Flower.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://LevelType1/Background/Background_1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://LevelType1/tileset.tres" type="TileSet" id=4]
+[ext_resource path="res://Collectable/Life/Life.tscn" type="PackedScene" id=5]
+[ext_resource path="res://LevelType1/Level_type1.gd" type="Script" id=10]
+
+[node name="Level2" type="TileMap"]
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 32, 32 )
+collision_use_kinematic = true
+format = 1
+tile_data = PoolIntArray( 131072, 2, 0, 131073, 536870914, 0, 196622, 2, 0, 196623, 3, 0, 196624, 3, 0, 196625, 3, 0, 196626, 536870914, 0, 262147, 2, 0, 262148, 3, 0, 262149, 3, 0, 262150, 3, 0, 262151, 536870914, 0, 262163, 536870916, 0, 327699, 536870913, 0, 327722, 4, 0, 393226, 2, 0, 393227, 3, 0, 393228, 3, 0, 393229, 3, 0, 393230, 3, 0, 393231, 3, 0, 393232, 536870914, 0, 393235, 1, 0, 393236, 536870914, 0, 458771, 1, 0, 458781, 2, 0, 458782, 3, 0, 458783, 3, 0, 458784, 536870914, 0, 458796, 4, 0, 524306, 2, 0, 524307, 1, 0, 524310, 2, 0, 524311, 3, 0, 524312, 536870914, 0, 589843, 1, 0, 589859, 2, 0, 589860, 536870914, 0, 589866, 2, 0, 589867, 3, 0, 589868, 3, 0, 589869, 536870914, 0, 589873, 4, 0, 655360, 2, 0, 655361, 3, 0, 655362, 3, 0, 655363, 3, 0, 655364, 3, 0, 655365, 536870915, 0, 655366, 536870915, 0, 655367, 3, 0, 655368, 3, 0, 655369, 536870914, 0, 655374, 2, 0, 655375, 3, 0, 655376, 536870915, 0, 655377, 3, 0, 655378, 3, 0, 655379, 1, 0, 655380, 3, 0, 655381, 536870914, 0, 655395, 1, 0, 655396, 1, 0, 655397, 3, 0, 655398, 3, 0, 655399, 536870914, 0, 655408, 2, 0, 655409, 1, 0, 720945, 1, 0 )
+script = ExtResource( 10 )
+
+[node name="Background1" parent="." instance=ExtResource( 3 )]
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 55.4992, 292.133 )
+
+[node name="Flowers" type="Node" parent="."]
+
+[node name="Flower" parent="Flowers" instance=ExtResource( 1 )]
+position = Vector2( 203.092, 309 )
+
+[node name="Flower2" parent="Flowers" instance=ExtResource( 1 )]
+position = Vector2( 1361.22, 148.145 )
+
+[node name="Flower3" parent="Flowers" instance=ExtResource( 1 )]
+position = Vector2( 1583.23, 276.406 )
+
+[node name="Flower4" parent="Flowers" instance=ExtResource( 1 )]
+position = Vector2( 964.886, 212.578 )
+scale = Vector2( -1, 1 )
+
+[node name="Flower5" parent="Flowers" instance=ExtResource( 1 )]
+position = Vector2( 689.399, 308.727 )
+
+[node name="Flower6" parent="Flowers" instance=ExtResource( 1 )]
+position = Vector2( 24.97, 52.7282 )
+scale = Vector2( -1, 1 )
+
+[node name="Flower7" parent="Flowers" instance=ExtResource( 1 )]
+position = Vector2( 137.298, 116.75 )
+
+[node name="Lives" type="Node" parent="."]
+
+[node name="Life" parent="Lives" instance=ExtResource( 5 )]
+position = Vector2( 592.429, 304.212 )
+[connection signal="number_flowers_changed" from="." to="Player" method="_on_number_flowers_changed"]

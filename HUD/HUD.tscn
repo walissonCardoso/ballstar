@@ -1,0 +1,120 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://HUD/font_labels.tres" type="DynamicFont" id=1]
+[ext_resource path="res://HUD/HUD.gd" type="Script" id=2]
+[ext_resource path="res://HUD/menu_theme.tres" type="Theme" id=3]
+[ext_resource path="res://HUD/button_blue.tres" type="StyleBox" id=4]
+[ext_resource path="res://HUD/button_blue_dark.tres" type="StyleBox" id=5]
+[ext_resource path="res://HUD/button_green.tres" type="StyleBox" id=6]
+[ext_resource path="res://HUD/PauseMenu.gd" type="Script" id=7]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="Level" type="Label" parent="."]
+margin_left = 10.0
+margin_top = 7.0
+margin_right = 92.0
+margin_bottom = 36.0
+custom_fonts/font = ExtResource( 1 )
+text = "Level 00"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Flowers" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -122.5
+margin_top = 7.0
+margin_right = 122.5
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 1 )
+text = "Flowers: 0 of 0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Multiplier" type="Label" parent="."]
+margin_left = 551.0
+margin_top = 6.0
+margin_right = 592.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 1 )
+text = "4 x"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lives" type="HBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -148.0
+margin_top = -173.0
+margin_right = -11.0
+margin_bottom = -146.0
+grow_horizontal = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseMenu" type="ColorRect" parent="."]
+pause_mode = 2
+visible = false
+margin_left = -1.09326
+margin_right = 638.907
+margin_bottom = 360.0
+grow_horizontal = 0
+theme = ExtResource( 3 )
+color = Color( 0.160784, 1, 0.160784, 0.403922 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Continue" type="Button" parent="PauseMenu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -80.5
+margin_top = -73.5
+margin_right = 80.5
+margin_bottom = -22.5
+focus_neighbour_bottom = NodePath("../Menu")
+focus_next = NodePath("../Menu")
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/focus = ExtResource( 4 )
+custom_styles/normal = ExtResource( 5 )
+text = "Continue"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="Button" parent="PauseMenu"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -80.5
+margin_top = 22.5
+margin_right = 80.5
+margin_bottom = 73.5
+focus_neighbour_top = NodePath("../Continue")
+focus_previous = NodePath("../Continue")
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/focus = ExtResource( 4 )
+custom_styles/normal = ExtResource( 5 )
+disabled = true
+text = "Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_down" from="PauseMenu/Continue" to="PauseMenu" method="_on_Continue_button_down"]
+[connection signal="button_down" from="PauseMenu/Menu" to="PauseMenu" method="_on_Menu_button_down"]

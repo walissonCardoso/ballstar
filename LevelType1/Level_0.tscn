@@ -1,0 +1,248 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://LevelType1/Background/Background_1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://LevelType1/Level_type1.gd" type="Script" id=3]
+[ext_resource path="res://LevelType1/tileset.tres" type="TileSet" id=4]
+[ext_resource path="res://Collectable/Flower/Flower.tscn" type="PackedScene" id=5]
+[ext_resource path="res://LevelType1/tutorial_assets/arrow.png" type="Texture" id=6]
+[ext_resource path="res://LevelType1/tutorial_assets/Wash Your Hand.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Enemies/LadyBug/LadyBug.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Collectable/Life/Life.tscn" type="PackedScene" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 7 )
+
+[sub_resource type="Animation" id=2]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.5, 1.5 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 240.796, 307.767 ), Vector2( 240.796, 302.767 ), Vector2( 240.796, 307.767 ) ]
+}
+
+[node name="Level0" type="TileMap"]
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 131101, 2, 0, 131102, 536870915, 0, 131103, 536870915, 0, 131104, 536870915, 0, 131105, 536870915, 0, 131106, 536870915, 0, 131107, 536870915, 0, 131108, 536870915, 0, 131109, 536870915, 0, 131110, 536870914, 0, 131114, 2, 0, 131115, 536870915, 0, 131116, 536870915, 0, 131117, 536870915, 0, 131118, 536870915, 0, 131119, 536870915, 0, 131120, 536870915, 0, 131121, 536870915, 0, 131122, 536870915, 0, 131123, 536870915, 0, 131124, 536870915, 0, 131125, 536870915, 0, 131126, 536870915, 0, 131127, 536870915, 0, 131128, 536870914, 0, 131131, 2, 0, 131132, 3, 0, 131133, 3, 0, 131134, 3, 0, 131135, 3, 0, 131136, 536870914, 0, 131138, 536870916, 0, 262211, 536870916, 0, 393274, 4, 0, 393281, 2, 0, 393282, 3, 0, 393283, 3, 0, 393284, 3, 0, 393285, 536870914, 0, 458752, 4, 0, 458809, 2, 0, 458810, 1, 0, 458817, 1, 0, 458818, 1, 0, 458819, 1, 0, 458820, 1, 0, 458821, 1, 0, 524288, 1, 0, 524344, 2, 0, 524345, 1, 0, 524346, 1, 0, 524353, 1, 0, 524354, 1, 0, 524355, 1, 0, 524356, 1, 0, 524357, 1, 0, 589824, 1, 0, 589845, 4, 0, 589857, 4, 0, 589888, 2, 0, 589889, 1, 0, 589890, 1, 0, 589891, 1, 0, 589892, 1, 0, 589893, 1, 0, 655360, 1, 0, 655361, 3, 0, 655362, 3, 0, 655363, 3, 0, 655364, 3, 0, 655365, 3, 0, 655366, 3, 0, 655367, 3, 0, 655368, 3, 0, 655369, 3, 0, 655370, 3, 0, 655371, 3, 0, 655372, 3, 0, 655373, 3, 0, 655374, 3, 0, 655375, 3, 0, 655376, 3, 0, 655377, 3, 0, 655378, 3, 0, 655379, 3, 0, 655380, 3, 0, 655381, 1, 0, 655382, 3, 0, 655383, 3, 0, 655384, 3, 0, 655385, 3, 0, 655386, 3, 0, 655387, 3, 0, 655388, 3, 0, 655389, 3, 0, 655390, 3, 0, 655391, 3, 0, 655392, 3, 0, 655393, 1, 0, 655394, 3, 0, 655395, 3, 0, 655396, 3, 0, 655397, 3, 0, 655398, 3, 0, 655399, 3, 0, 655400, 536870914, 0, 655404, 2, 0, 655405, 3, 0, 655406, 3, 0, 655407, 3, 0, 655408, 3, 0, 655409, 3, 0, 655410, 3, 0, 655411, 3, 0, 655412, 3, 0, 655413, 3, 0, 655414, 3, 0, 655415, 3, 0, 655416, 3, 0, 655417, 3, 0, 655418, 3, 0, 655419, 3, 0, 655420, 3, 0, 655421, 3, 0, 655422, 3, 0, 655423, 3, 0, 655424, 1, 0, 655425, 1, 0, 655426, 1, 0, 655427, 1, 0, 655428, 1, 0, 655429, 1, 0 )
+script = ExtResource( 3 )
+
+[node name="Background1" parent="." instance=ExtResource( 1 )]
+position = Vector2( 25, -2.247 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 74.9106, 271.734 )
+
+[node name="Labels" type="Node2D" parent="."]
+z_index = -1
+
+[node name="flower_label" type="Label" parent="Labels"]
+margin_left = 171.981
+margin_top = 226.027
+margin_right = 316.981
+margin_bottom = 259.027
+custom_fonts/font = SubResource( 1 )
+text = "Collect all the flowers
+to pass the level"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Labels/flower_label"]
+position = Vector2( 119.459, 54.1336 )
+rotation = 2.0944
+scale = Vector2( 0.358493, -0.358493 )
+texture = ExtResource( 6 )
+
+[node name="jump_board_label" type="Label" parent="Labels"]
+margin_left = 491.981
+margin_top = 233.027
+margin_right = 654.981
+margin_bottom = 266.027
+custom_fonts/font = SubResource( 1 )
+text = "Press spacebar to jump"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="jump_pad_label" type="Label" parent="Labels"]
+visible = false
+margin_left = 555.981
+margin_top = 233.027
+margin_right = 700.981
+margin_bottom = 266.027
+custom_fonts/font = SubResource( 1 )
+text = "Press x  to jump"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dash_board_label" type="Label" parent="Labels"]
+margin_left = 794.245
+margin_top = 233.971
+margin_right = 986.245
+margin_bottom = 266.971
+custom_fonts/font = SubResource( 1 )
+text = "press key c twice quickly to dash"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dash_pad_label" type="Label" parent="Labels"]
+visible = false
+margin_left = 854.245
+margin_top = 233.971
+margin_right = 1021.25
+margin_bottom = 266.971
+custom_fonts/font = SubResource( 1 )
+text = "press c twice quickly to dash"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fall_label" type="Label" parent="Labels"]
+margin_left = 1274.24
+margin_top = 226.027
+margin_right = 1419.24
+margin_bottom = 259.027
+custom_fonts/font = SubResource( 1 )
+text = "Watch your step!"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Labels/fall_label"]
+position = Vector2( 119.459, 54.1336 )
+rotation = 2.0944
+scale = Vector2( 0.358493, -0.358493 )
+texture = ExtResource( 6 )
+
+[node name="large_distance" type="Label" parent="Labels"]
+margin_left = 1922.81
+margin_top = 106.647
+margin_right = 2067.81
+margin_bottom = 139.647
+custom_fonts/font = SubResource( 1 )
+text = "Combine jump and dash
+to cross large distances"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Labels/large_distance"]
+position = Vector2( 119.459, 54.1336 )
+rotation = 2.0944
+scale = Vector2( 0.358493, -0.358493 )
+texture = ExtResource( 6 )
+
+[node name="enemy" type="Label" parent="Labels"]
+margin_left = 1954.0
+margin_top = -42.3691
+margin_right = 2142.0
+margin_bottom = 8.63088
+custom_fonts/font = SubResource( 1 )
+text = "Be careful!!
+They can hurt you!
+Step over or dash to kill"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Labels/enemy"]
+position = Vector2( 142.054, 75.0532 )
+rotation = 2.0944
+scale = Vector2( 0.358493, -0.358493 )
+texture = ExtResource( 6 )
+
+[node name="save" type="Label" parent="Labels"]
+margin_left = 1279.58
+margin_top = -33.6016
+margin_right = 1472.58
+margin_bottom = -0.601593
+custom_fonts/font = SubResource( 1 )
+text = "Game will save automatically
+at each level"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="extra_life_label" type="Label" parent="Labels"]
+margin_left = 913.209
+margin_top = -21.6428
+margin_right = 1058.21
+margin_bottom = 11.3572
+custom_fonts/font = SubResource( 1 )
+text = "That's an extra life"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Labels/extra_life_label"]
+position = Vector2( 119.459, 54.1336 )
+rotation = 2.0944
+scale = Vector2( 0.358493, -0.358493 )
+texture = ExtResource( 6 )
+
+[node name="Flowers" type="Node" parent="."]
+
+[node name="Flower1" parent="Flowers" instance=ExtResource( 5 )]
+position = Vector2( 240.796, 307.767 )
+
+[node name="Animation" type="AnimationPlayer" parent="Flowers/Flower1"]
+autoplay = "grow"
+method_call_mode = 1
+anims/grow = SubResource( 2 )
+
+[node name="Flower" parent="Flowers" instance=ExtResource( 5 )]
+position = Vector2( 1073.92, 274.714 )
+
+[node name="Flower2" parent="Flowers" instance=ExtResource( 5 )]
+position = Vector2( 2238.1, 181.107 )
+scale = Vector2( -1, 1 )
+
+[node name="Flower3" parent="Flowers" instance=ExtResource( 5 )]
+position = Vector2( 1381.65, 52.2921 )
+
+[node name="enemies" type="Node" parent="."]
+
+[node name="LadyBug" parent="enemies" instance=ExtResource( 8 )]
+position = Vector2( 1915.24, 35.7716 )
+
+[node name="LadyBug2" parent="enemies" instance=ExtResource( 8 )]
+position = Vector2( 1661.33, 35.7716 )
+
+[node name="Lives" type="Node" parent="."]
+
+[node name="Life" parent="Lives" instance=ExtResource( 9 )]
+position = Vector2( 987.773, 50.8974 )
+[connection signal="number_flowers_changed" from="." to="Player" method="_on_number_flowers_changed"]

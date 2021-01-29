@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/maybe_game.ogg-8b6766d4edbfc94de95c332fc220b4f3.oggstr"
+
+[deps]
+
+source_file="res://Player/maybe_game.ogg"
+dest_files=[ "res://.import/maybe_game.ogg-8b6766d4edbfc94de95c332fc220b4f3.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

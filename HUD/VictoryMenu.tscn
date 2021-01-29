@@ -1,0 +1,150 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://HUD/VictoryMenu.gd" type="Script" id=1]
+[ext_resource path="res://HUD/Wash Your Hand.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://HUD/light.png" type="Texture" id=3]
+[ext_resource path="res://HUD/sky_night.png" type="Texture" id=4]
+[ext_resource path="res://HUD/font_labels.tres" type="DynamicFont" id=5]
+[ext_resource path="res://HUD/explosion.wav" type="AudioStream" id=6]
+[ext_resource path="res://HUD/trail.wav" type="AudioStream" id=7]
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0.00966184, 0.179545 ), 0.0, 0.0, 0, 0, Vector2( 0.990338, 0.988636 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=2]
+colors = PoolColorArray( 0.730469, 0.730469, 0.730469, 1, 0.913725, 0.937255, 0.184314, 0.164706 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "fire"
+length = 2.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Trail:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 88, -0.25, 0, 0.45, 36.9929, 208, 0, 0.600464, 0.25, 0 ),
+"times": PoolRealArray( 0, 2 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Trail:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 320, -0.25, 0, 1.1, -224.867, 104, 0, 0.0910034, 0.25, 0 ),
+"times": PoolRealArray( 0, 2 )
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "light"
+length = 2.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Light2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.945098, 0.968627, 0.192157, 1 ), Color( 0.945098, 0.968627, 0.192157, 0.368627 ), Color( 0.945098, 0.968627, 0.192157, 0 ) ]
+}
+
+[sub_resource type="DynamicFont" id=4]
+size = 48
+font_data = ExtResource( 2 )
+
+[node name="VictoryMenu" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="Sprite" parent="."]
+position = Vector2( 320, 184 )
+texture = ExtResource( 4 )
+
+[node name="FireWork" type="CPUParticles2D" parent="."]
+position = Vector2( 208, 104 )
+emitting = false
+amount = 64
+one_shot = true
+explosiveness = 0.73
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 180.0
+gravity = Vector2( 0, 50 )
+initial_velocity = 150.0
+linear_accel = -150.0
+scale_amount = 8.0
+scale_amount_curve = SubResource( 1 )
+color_ramp = SubResource( 2 )
+
+[node name="Trail" type="CPUParticles2D" parent="."]
+position = Vector2( 208, 104 )
+amount = 12
+lifetime = 0.2
+local_coords = false
+gravity = Vector2( 0, 0 )
+scale_amount = 2.0
+
+[node name="Light2D" type="Sprite" parent="."]
+modulate = Color( 0.945098, 0.968627, 0.192157, 0 )
+position = Vector2( 208, 104 )
+scale = Vector2( 5.5, 5.5 )
+texture = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="Light2D"]
+margin_left = -38.0
+margin_top = -19.0
+margin_right = 78.0
+margin_bottom = 48.0
+color = Color( 0.960784, 0.956863, 0.658824, 0.129412 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationFireWorks" type="AnimationPlayer" parent="."]
+autoplay = "fire"
+anims/fire = SubResource( 3 )
+
+[node name="AnimationLight" type="AnimationPlayer" parent="."]
+anims/light = SubResource( 5 )
+
+[node name="contratulations" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 216.0
+margin_top = 165.0
+margin_right = 577.0
+margin_bottom = 209.0
+custom_fonts/font = SubResource( 4 )
+text = "Congratulations!!!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="Button" parent="."]
+margin_left = 311.0
+margin_top = 254.0
+margin_right = 487.0
+margin_bottom = 286.0
+custom_fonts/font = ExtResource( 5 )
+text = "Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TrailSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+
+[node name="ExplosionSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+[connection signal="animation_finished" from="AnimationFireWorks" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="animation_finished" from="AnimationLight" to="." method="_on_AnimationLight_animation_finished"]
+[connection signal="pressed" from="Menu" to="." method="_on_Menu_pressed"]

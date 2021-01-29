@@ -1,0 +1,86 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://HUD/Wash Your Hand.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://HUD/GameOverMenu.gd" type="Script" id=2]
+[ext_resource path="res://HUD/font_labels.tres" type="DynamicFont" id=3]
+[ext_resource path="res://HUD/game_over.wav" type="AudioStream" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "fade in"
+tracks/0/type = "value"
+tracks/0/path = NodePath("GameOver:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Menu:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="GameOverMenu" type="ColorRect"]
+margin_right = 640.0
+margin_bottom = 360.0
+color = Color( 0, 0, 0, 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameOver" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -137.0
+margin_top = 93.0
+margin_right = 137.0
+margin_bottom = 152.0
+custom_fonts/font = SubResource( 1 )
+text = "Game Over"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -90.0
+margin_top = 40.0
+margin_right = 90.0
+margin_bottom = 78.0
+custom_fonts/font = ExtResource( 3 )
+text = "Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+autoplay = "fade in"
+"anims/fade in" = SubResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+autoplay = true
+[connection signal="pressed" from="Menu" to="." method="_on_Menu_pressed"]
+[connection signal="animation_finished" from="Animation" to="." method="_on_Animation_animation_finished"]

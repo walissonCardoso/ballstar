@@ -1,0 +1,93 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://LevelType1/Background/montain2.png" type="Texture" id=1]
+[ext_resource path="res://LevelType1/Background/cloud_3.png" type="Texture" id=2]
+[ext_resource path="res://LevelType1/Background/montain1.png" type="Texture" id=3]
+[ext_resource path="res://LevelType1/Background/cloud_1.png" type="Texture" id=4]
+[ext_resource path="res://LevelType1/Background/Purple Planet Music - Animal Magic.ogg" type="AudioStream" id=5]
+
+
+
+[sub_resource type="Gradient" id=1]
+colors = PoolColorArray( 0.439453, 0.733185, 0.78125, 1, 0.0830079, 0, 0.664063, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[node name="Background1" type="Node2D"]
+
+[node name="Sky" type="ParallaxBackground" parent="."]
+scroll_base_scale = Vector2( 0.1, 0.1 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Sky"]
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Sky" type="Sprite" parent="Sky/ParallaxLayer"]
+position = Vector2( 309.832, -57.2885 )
+rotation = 4.71239
+scale = Vector2( 0.491624, 812.973 )
+texture = SubResource( 2 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Cloud1" type="Sprite" parent="Sky/ParallaxLayer"]
+modulate = Color( 1, 1, 1, 0.486275 )
+position = Vector2( 245, 55 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Cloud2" type="Sprite" parent="Sky/ParallaxLayer"]
+modulate = Color( 1, 1, 1, 0.643137 )
+position = Vector2( 540, 109 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Montains" type="ParallaxBackground" parent="."]
+scroll_base_scale = Vector2( 0.8, 0.9 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Montains"]
+modulate = Color( 1, 1, 1, 0.572549 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Montain1" type="Sprite" parent="Montains/ParallaxLayer"]
+modulate = Color( 1, 1, 1, 0.686275 )
+position = Vector2( 231, 291 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Montain2" type="Sprite" parent="Montains/ParallaxLayer"]
+modulate = Color( 1, 1, 1, 0.776471 )
+position = Vector2( 918, 302 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 5 )
+autoplay = true
+__meta__ = {
+"_editor_description_": ""
+}

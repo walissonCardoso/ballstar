@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/explosion.wav-6bc9816b1cdd05dcdb8d4d6b6a52fe58.sample"
+
+[deps]
+
+source_file="res://HUD/explosion.wav"
+dest_files=[ "res://.import/explosion.wav-6bc9816b1cdd05dcdb8d4d6b6a52fe58.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

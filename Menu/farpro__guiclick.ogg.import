@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/farpro__guiclick.ogg-4e87c28ab78f3f26a4f6beb6b3405b91.oggstr"
+
+[deps]
+
+source_file="res://Menu/farpro__guiclick.ogg"
+dest_files=[ "res://.import/farpro__guiclick.ogg-4e87c28ab78f3f26a4f6beb6b3405b91.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

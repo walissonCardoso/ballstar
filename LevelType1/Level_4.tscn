@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://LevelType1/tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://LevelType1/Background/Background_1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://LevelType1/Level_type1.gd" type="Script" id=3]
+[ext_resource path="res://Enemies/LadyBug/LadyBug.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Collectable/Flower/Flower.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Enemies/Bat/Bat.tscn" type="PackedScene" id=7]
+
+[node name="Level_4" type="TileMap"]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( -65505, 2, 0, -65504, 536870915, 0, -65503, 536870915, 0, -65502, 536870915, 0, -65501, 536870915, 0, -65500, 536870915, 0, -65499, 536870914, 0, 65559, 2, 0, 65560, 3, 0, 65561, 3, 0, 65562, 3, 0, 65563, 3, 0, 65564, 3, 0, 65565, 536870914, 0, 65576, 2, 0, 65577, 536870914, 0, 131086, 2, 0, 131087, 536870915, 0, 131088, 536870915, 0, 131089, 536870915, 0, 131090, 536870915, 0, 131091, 536870915, 0, 131092, 536870914, 0, 196621, 4, 0, 196633, 2, 0, 196634, 3, 0, 196635, 3, 0, 196636, 3, 0, 196637, 3, 0, 196638, 3, 0, 196639, 536870914, 0, 196649, 2, 0, 196650, 536870915, 0, 196651, 536870915, 0, 196652, 536870914, 0, 262146, 2, 0, 262147, 536870915, 0, 262148, 536870915, 0, 262149, 536870915, 0, 262150, 536870915, 0, 262151, 536870915, 0, 262152, 536870914, 0, 393226, 2, 0, 393227, 3, 0, 393228, 3, 0, 393229, 3, 0, 393230, 536870914, 0, 393262, 2, 0, 393263, 3, 0, 393264, 3, 0, 393265, 3, 0, 393266, 3, 0, 393267, 3, 0, 393268, 3, 0, 393269, 536870915, 0, 393270, 536870915, 0, 393271, 536870915, 0, 393272, 536870915, 0, 393273, 536870914, 0, 524304, 2, 0, 524305, 536870915, 0, 524306, 536870915, 0, 524307, 536870915, 0, 524308, 536870915, 0, 524309, 536870914, 0, 655363, 2, 0, 655364, 3, 0, 655365, 3, 0, 655366, 3, 0, 655367, 536870914, 0, 655370, 2, 0, 655371, 3, 0, 655372, 3, 0, 655373, 3, 0, 655374, 536870914, 0 )
+script = ExtResource( 3 )
+
+[node name="Background1" parent="." instance=ExtResource( 2 )]
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 140.095, 288.588 )
+
+[node name="Flowers" type="Node" parent="."]
+
+[node name="Flower" parent="Flowers" instance=ExtResource( 6 )]
+position = Vector2( 538.625, 244.732 )
+scale = Vector2( -1, 1 )
+
+[node name="Flower2" parent="Flowers" instance=ExtResource( 6 )]
+position = Vector2( 1157.02, -42.2485 )
+
+[node name="Flower3" parent="Flowers" instance=ExtResource( 6 )]
+position = Vector2( 821.902, 84.5039 )
+scale = Vector2( -1, 1 )
+
+[node name="Flower4" parent="Flowers" instance=ExtResource( 6 )]
+position = Vector2( 1651.37, 179.93 )
+
+[node name="Flower5" parent="Flowers" instance=ExtResource( 6 )]
+position = Vector2( 104.744, 115.882 )
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="LadyBug" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 542.698, 45.6806 )
+
+[node name="LadyBug5" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 392.684, 169.293 )
+enable_flying = true
+fly_to_point = Vector2( 606.773, 234.779 )
+
+[node name="LadyBug2" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 178.148, 104.009 )
+
+[node name="LadyBug3" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 872.529, 75.9532 )
+
+[node name="LadyBug4" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 375.874, 304.55 )
+
+[node name="LadyBug6" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 1564.26, 173.114 )
+
+[node name="LadyBug8" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 1723.38, 170.841 )
+
+[node name="LadyBug7" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 1381.27, 76.5053 )
+
+[node name="Bat" parent="Enemies" instance=ExtResource( 7 )]
+position = Vector2( 432.242, 138.78 )
+
+[node name="Bat2" parent="Enemies" instance=ExtResource( 7 )]
+position = Vector2( 1049.46, 13.6476 )
+[connection signal="number_flowers_changed" from="." to="Player" method="_on_number_flowers_changed"]

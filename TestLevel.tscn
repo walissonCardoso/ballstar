@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://LevelType1/tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Enemies/Bat/Bat.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Enemies/LadyBug/LadyBug.tscn" type="PackedScene" id=4]
+
+
+
+
+
+[node name="TestLevel" type="TileMap"]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196623, 0, 0, 196635, 0, 0, 196636, 0, 0, 262168, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327712, 0, 0, 393229, 0, 0, 393236, 0, 0, 393237, 0, 0, 393238, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524303, 0, 0, 524314, 0, 0, 524315, 0, 0, 524316, 0, 0, 524317, 0, 0, 524318, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0, 655382, 0, 0, 655383, 0, 0, 655384, 0, 0, 655385, 0, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 92.0616, 283.004 )
+
+[node name="Bat" parent="." instance=ExtResource( 3 )]
+position = Vector2( 216.955, 139.068 )
+
+[node name="Bat2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 496.606, 140.148 )
+
+[node name="Bat3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 923.101, 140.148 )
+
+[node name="LadyBug" parent="." instance=ExtResource( 4 )]
+position = Vector2( 389.784, 138.206 )

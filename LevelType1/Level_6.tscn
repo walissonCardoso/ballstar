@@ -1,0 +1,107 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://LevelType1/MovablePlatform.tscn" type="PackedScene" id=1]
+[ext_resource path="res://LevelType1/tileset.tres" type="TileSet" id=2]
+[ext_resource path="res://LevelType1/Background/Background_1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Collectable/Life/Life.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Collectable/Flower/Flower.tscn" type="PackedScene" id=6]
+[ext_resource path="res://LevelType1/Level_type1.gd" type="Script" id=7]
+[ext_resource path="res://Enemies/LadyBug/LadyBug.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Enemies/Bat/Bat.tscn" type="PackedScene" id=9]
+
+[node name="Level_5" type="TileMap"]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( -3211254, 2, 0, -3211253, 3, 0, -3211252, 3, 0, -3211251, 3, 0, -3211250, 3, 0, -3211249, 3, 0, -3211248, 536870914, 0, -2555901, 536870916, 0, -2424829, 536870916, 0, -2293755, 536870916, 0, -2293749, 2, 0, -2293748, 3, 0, -2293747, 3, 0, -2293746, 3, 0, -2293745, 3, 0, -2293744, 536870914, 0, -2162679, 4, 0, -2097147, 2, 0, -2097146, 536870914, 0, -2031614, 536870916, 0, -1835009, 2, 0, -1900544, 536870915, 0, -1900543, 536870915, 0, -1900542, 536870915, 0, -1900541, 536870915, 0, -1900540, 536870915, 0, -1900539, 536870914, 0, -1834997, 2, 0, -1834996, 3, 0, -1834995, 3, 0, -1834994, 3, 0, -1834993, 3, 0, -1834992, 536870914, 0, -1114113, 2, 0, -1179648, 3, 0, -1179647, 3, 0, -1179646, 3, 0, -1179645, 3, 0, -1179644, 536870914, 0, -786421, 2, 0, -786420, 3, 0, -786419, 3, 0, -786418, 3, 0, -786417, 3, 0, -786416, 536870914, 0, -786402, 2, 0, -786401, 3, 0, -786400, 3, 0, -786399, 3, 0, -786398, 3, 0, -786397, 3, 0, -786396, 536870914, 0, -589825, 2, 0, -655360, 3, 0, -655359, 3, 0, -655358, 3, 0, -655357, 3, 0, -655356, 536870914, 0, -524277, 2, 0, -524276, 3, 0, -524275, 3, 0, -524274, 3, 0, -524273, 3, 0, -524272, 536870914, 0, -65537, 2, 0, -131072, 3, 0, -131071, 3, 0, -131070, 3, 0, -131069, 3, 0, -131068, 536870914, 0, 11, 2, 0, 12, 3, 0, 13, 3, 0, 14, 3, 0, 15, 3, 0, 16, 536870914, 0, 393215, 2, 0, 327680, 3, 0, 327681, 3, 0, 327682, 3, 0, 327683, 3, 0, 327684, 536870914, 0, 458763, 2, 0, 458764, 3, 0, 458765, 3, 0, 458766, 3, 0, 458767, 536870915, 0, 458768, 536870914, 0, 655361, 2, 0, 655362, 536870915, 0, 655363, 536870915, 0, 655364, 536870914, 0 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+
+[node name="Background1" parent="." instance=ExtResource( 3 )]
+position = Vector2( 155.016, 30.2906 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 80, 294 )
+
+[node name="Platforms" type="Node" parent="."]
+
+[node name="MovablePlatform" parent="Platforms" instance=ExtResource( 1 )]
+position = Vector2( 208, 320 )
+EXTENT = -3
+
+[node name="MovablePlatform2" parent="Platforms" instance=ExtResource( 1 )]
+position = Vector2( 208, 160 )
+EXTENT = -3
+
+[node name="MovablePlatform3" parent="Platforms" instance=ExtResource( 1 )]
+position = Vector2( 208, -128 )
+EXTENT = -3
+
+[node name="MovablePlatform4" parent="Platforms" instance=ExtResource( 1 )]
+position = Vector2( 208, -448 )
+EXTENT = -3
+
+[node name="MovablePlatform5" parent="Platforms" instance=ExtResource( 1 )]
+position = Vector2( 208, -608 )
+EXTENT = -7
+DURATION = 7.0
+
+[node name="MovablePlatform6" parent="Platforms" instance=ExtResource( 1 )]
+position = Vector2( 208, -1280 )
+EXTENT = -8
+DURATION = 8.0
+
+[node name="Flowers" type="Node" parent="."]
+
+[node name="Flower" parent="Flowers" instance=ExtResource( 6 )]
+position = Vector2( 60.4651, 149.003 )
+
+[node name="Flower2" parent="Flowers" instance=ExtResource( 6 )]
+position = Vector2( 95.4116, -75.4481 )
+scale = Vector2( -1, 1 )
+
+[node name="Flower3" parent="Flowers" instance=ExtResource( 6 )]
+position = Vector2( 99.6017, -331.193 )
+scale = Vector2( -1, 1 )
+
+[node name="Flower5" parent="Flowers" instance=ExtResource( 6 )]
+position = Vector2( 99.4937, -587.452 )
+scale = Vector2( -1, 1 )
+
+[node name="Flower4" parent="Flowers" instance=ExtResource( 6 )]
+position = Vector2( 111.474, -1259.48 )
+scale = Vector2( -1, 1 )
+
+[node name="Flower6" parent="Flowers" instance=ExtResource( 6 )]
+position = Vector2( 503.131, -1579.46 )
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="LadyBug" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 458.557, -278.832 )
+enable_flying = true
+fly_to_point = Vector2( 1.137, -85.242 )
+
+[node name="LadyBug2" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 26.8343, -340.507 )
+
+[node name="LadyBug3" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 463.697, -917.851 )
+
+[node name="Bat" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 88.7995, -20.4664 )
+
+[node name="Bat2" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 112.408, -1140.16 )
+
+[node name="Bat3" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 370.725, -1077.03 )
+
+[node name="Lives" type="Node" parent="."]
+
+[node name="Life" parent="Lives" instance=ExtResource( 5 )]
+position = Vector2( 472.479, 207.386 )
+[connection signal="number_flowers_changed" from="." to="Player" method="_on_number_flowers_changed"]

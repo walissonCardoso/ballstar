@@ -1,0 +1,16 @@
+[gd_resource type="Animation" format=2]
+
+[resource]
+resource_name = "main_exit"
+length = 0.4
+step = 0.05
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Camera2D/Main:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.0314268, 15.2045, 35.9405, -0.0572918, -22.8096, 0.0928721, 24.1923, -531.092, -0.257933, 394.334, 0.0918521, -151.743 ),
+"times": PoolRealArray( 0, 0.1, 0.4 )
+}

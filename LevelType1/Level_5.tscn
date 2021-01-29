@@ -1,0 +1,95 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://LevelType1/MovablePlatform.tscn" type="PackedScene" id=1]
+[ext_resource path="res://LevelType1/tileset.tres" type="TileSet" id=2]
+[ext_resource path="res://LevelType1/Background/Background_1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Enemies/LadyBug/LadyBug.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Collectable/Flower/Flower.tscn" type="PackedScene" id=6]
+[ext_resource path="res://LevelType1/Level_type1.gd" type="Script" id=7]
+[ext_resource path="res://Enemies/Bat/Bat.tscn" type="PackedScene" id=8]
+
+[node name="Level_5" type="TileMap"]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( -65527, 2, 0, -65526, 3, 0, -65525, 3, 0, -65524, 536870914, 0, -65515, 4, 0, 65539, 2, 0, 65540, 3, 0, 65541, 3, 0, 65542, 536870914, 0, 65559, 4, 0, 65572, 2, 0, 65573, 536870914, 0, 65577, 2, 0, 65578, 536870914, 0, 65582, 2, 0, 65583, 536870914, 0, 131124, 2, 0, 131125, 536870915, 0, 131126, 536870915, 0, 131127, 536870915, 0, 131128, 536870914, 0, 196658, 4, 0, 262147, 2, 0, 262148, 3, 0, 262149, 3, 0, 262150, 536870914, 0, 262174, 2, 0, 262175, 536870915, 0, 262176, 536870914, 0, 262180, 2, 0, 262181, 536870914, 0, 262185, 2, 0, 262186, 536870914, 0, 262190, 2, 0, 262191, 536870914, 0, 393241, 2, 0, 393242, 3, 0, 393243, 536870915, 0, 393244, 536870914, 0, 458762, 2, 0, 458763, 3, 0, 458764, 3, 0, 458765, 536870914, 0, 458782, 2, 0, 458783, 536870915, 0, 458784, 536870915, 0, 458785, 536870915, 0, 458786, 536870915, 0, 458787, 536870915, 0, 458788, 536870915, 0, 458789, 536870915, 0, 458790, 536870915, 0, 458791, 536870915, 0, 458792, 536870915, 0, 458793, 536870915, 0, 458794, 536870915, 0, 458795, 536870915, 0, 458796, 536870915, 0, 458797, 536870915, 0, 458798, 536870915, 0, 458799, 536870915, 0, 458800, 536870915, 0, 458801, 536870915, 0, 458802, 536870915, 0, 458803, 536870914, 0, 655361, 2, 0, 655362, 536870915, 0, 655363, 536870915, 0, 655364, 536870914, 0 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+
+[node name="Background1" parent="." instance=ExtResource( 3 )]
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 79.927, 293.732 )
+
+[node name="Platforms" type="Node" parent="."]
+
+[node name="MovablePlatform" parent="Platforms" instance=ExtResource( 1 )]
+position = Vector2( 192, 320 )
+EXTENT = -2
+DURATION = 2.0
+
+[node name="MovablePlatform3" parent="Platforms" instance=ExtResource( 1 )]
+position = Vector2( 480, -64 )
+EXTENT = -4
+
+[node name="MovablePlatform2" parent="Platforms" instance=ExtResource( 1 )]
+position = Vector2( 480, 192 )
+TYPE = 0
+
+[node name="MovablePlatform4" parent="Platforms" instance=ExtResource( 1 )]
+position = Vector2( 800, 96 )
+TYPE = 0
+EXTENT = 5
+DURATION = 5.0
+
+[node name="Flowers" type="Node" parent="."]
+
+[node name="Flower" parent="Flowers" instance=ExtResource( 6 )]
+position = Vector2( 173.544, 116.432 )
+scale = Vector2( -1, 1 )
+
+[node name="Flower4" parent="Flowers" instance=ExtResource( 6 )]
+position = Vector2( 689.869, -43.9797 )
+scale = Vector2( -1, 1 )
+
+[node name="Flower2" parent="Flowers" instance=ExtResource( 6 )]
+position = Vector2( 1774.75, 52.6064 )
+
+[node name="Flower3" parent="Flowers" instance=ExtResource( 6 )]
+position = Vector2( 1327.39, 20.2825 )
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="LadyBug" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 175.82, 101.864 )
+enable_flying = true
+fly_to_point = Vector2( 416, 170 )
+
+[node name="LadyBug3" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 1325.31, 11.0766 )
+enable_flying = true
+fly_to_point = Vector2( 1170.72, 109.205 )
+
+[node name="LadyBug4" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 1518.67, 11.552 )
+enable_flying = true
+fly_to_point = Vector2( 1340, 107.829 )
+
+[node name="LadyBug6" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 1546.68, 193.414 )
+fly_to_point = Vector2( 416, 170 )
+
+[node name="LadyBug2" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 359.613, -81.9237 )
+enable_flying = true
+fly_to_point = Vector2( 744.916, -77.4 )
+
+[node name="Bat" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 1187.21, 172.866 )
+
+[node name="Bat2" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 689.565, 11.2158 )
+[connection signal="number_flowers_changed" from="." to="Player" method="_on_number_flowers_changed"]

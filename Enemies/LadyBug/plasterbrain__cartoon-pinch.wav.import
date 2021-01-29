@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/plasterbrain__cartoon-pinch.wav-56c179432e435fa1b179321bc597cc55.sample"
+
+[deps]
+
+source_file="res://Enemies/LadyBug/plasterbrain__cartoon-pinch.wav"
+dest_files=[ "res://.import/plasterbrain__cartoon-pinch.wav-56c179432e435fa1b179321bc597cc55.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

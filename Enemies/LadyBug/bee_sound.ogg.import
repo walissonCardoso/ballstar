@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bee_sound.ogg-5bf8ce416e78a756da242b774d225648.oggstr"
+
+[deps]
+
+source_file="res://Enemies/LadyBug/bee_sound.ogg"
+dest_files=[ "res://.import/bee_sound.ogg-5bf8ce416e78a756da242b774d225648.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

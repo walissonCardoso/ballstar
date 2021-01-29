@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/bee_sound.wav-879cd8668a52c9826eb772636f5b0d2e.sample"
+
+[deps]
+
+source_file="res://Enemies/LadyBug/bee_sound.wav"
+dest_files=[ "res://.import/bee_sound.wav-879cd8668a52c9826eb772636f5b0d2e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
